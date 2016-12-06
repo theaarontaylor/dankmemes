@@ -1,6 +1,3 @@
-# Meme Generator
-
-
 
 ```
 npm install
