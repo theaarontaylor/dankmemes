@@ -5,3 +5,26 @@
   margin: 0 auto;
   padding: 0 1em;
 }
+
+
+.contact-section{
+  padding: 20px;
+}
+
+.form-container{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  width:60%;
+}
+
+.text-form{
+  width:40%;
+}
+

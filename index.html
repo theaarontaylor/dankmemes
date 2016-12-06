@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
@@ -18,7 +19,6 @@
                     <li class="nav-items">Contact Us</li>
                 </ul>
             </div>
-
         </div>
     </nav>
     <section>
@@ -27,8 +27,20 @@
     <section>
         <div class="about"></div>
     </section>
-    <section>
-        <div class="contactus"></div>
+    <section class="contact-section">
+        <h1>Get in touch</h1>
+        <h4 class="h4-class">In order to get in touch use the form below</h4>
+        <div class="form-container">
+            <form action="post" class="contact-form">
+                <input type="text" placeholder="Name(Required)" />
+                <input type="email" placeholder="Email(Required)" />
+                <input type="text" placeholder="Subject" />
+                <textarea type="" placeholder="Write your message here"></textarea>
+            </form>
+            <div class="text-form">
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+        </div>
     </section>
     <script src="js/main.js"></script>
 </body>
