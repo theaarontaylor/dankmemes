@@ -8,7 +8,10 @@
 @import 'forms';
 
 /* Components */
-@import 'main-nav';
+@import '_main-nav';
 @import 'main-footer';
+@import '_gallery';
+@import '_about.scss';
+@import '_contact'
 
 
