@@ -62,7 +62,7 @@ renderImageRow(gImages);
 
 
 function filterImages(_keyWordsToSearch) {
-    debugger
+    // debugger
     var matchedImages = [];
     var curImage;
     //first loop
@@ -90,8 +90,5 @@ function filterImages(_keyWordsToSearch) {
     // 2 => 2
 }
 
-function sliceMatchedImages(){
-
-}
 
 filterImages(['happy','sad']);
