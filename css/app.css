@@ -1,43 +1,19 @@
-body{background-color: white;}
+ /*Style for "Header" 
+width: 1020px;
+height: 63px;
+background-color: #323232;*/
 
-header {
-    background-color: black;
-    padding:10px;
-    margin-bottom: 30px;
-}
+ /*Style for "gallery" 
+width: 1020px;
+height: 1732px;
+background-color: white;*/
 
-h1 {
-    color: lightgreen;
-    font-size: 4em;
-}
-h2 {
-    color: antiquewhite;
-}
+ /*Style for "about" 
+width: 1020px;
+height: 341px;
+background-color: #2eb398;*/
 
-.niceText {
-    font-style: italic;
-    color:lightgreen;
-}
-
-.logo {float:right}
-
-.card {
-    width:170px;
-    height:200px;
-    float:left;
-    margin: 25px;
-}
-
-.card img {
-    position: absolute;
-}
-
-.card.flipped .back{
-    display:none;
-}
-
-.front{margin-top: 5px;}
-
-.back{ width: 175px;}
-
-.row-content{font-weight: bold;}
+ /*Style for "form" 
+width: 1020px;
+height: 564px;
+background-color: #323232;*/
