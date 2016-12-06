@@ -1,0 +1,43 @@
+body{background-color: white;}
+
+header {
+    background-color: black;
+    padding:10px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: lightgreen;
+    font-size: 4em;
+}
+h2 {
+    color: antiquewhite;
+}
+
+.niceText {
+    font-style: italic;
+    color:lightgreen;
+}
+
+.logo {float:right}
+
+.card {
+    width:170px;
+    height:200px;
+    float:left;
+    margin: 25px;
+}
+
+.card img {
+    position: absolute;
+}
+
+.card.flipped .back{
+    display:none;
+}
+
+.front{margin-top: 5px;}
+
+.back{ width: 175px;}
+
+.row-content{font-weight: bold;}
