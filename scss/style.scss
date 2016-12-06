@@ -1,0 +1,17 @@
+@import 'vendor';
+@import 'functions';
+@import 'helpers';
+@import 'fonts';
+@import 'vars';
+@import '_layout';
+@import 'base';
+@import 'forms';
+
+/* Components */
+@import '_main-nav';
+@import 'main-footer';
+@import '_gallery';
+@import '_about.scss';
+@import '_contact'
+
+

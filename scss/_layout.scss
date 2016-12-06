@@ -1,0 +1,61 @@
+/*----------  Containers  ----------*/
+
+.container {
+  width: var(--container-width);
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 650px;
+}
+
+.content-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 60%;
+  height: 500px;
+  padding-right: 30px;
+}
+
+.text-form {
+
+  width: 30%;
+}
+
+textarea,
+.textarea-form {
+  width: 100%;
+  height: 300px;
+}
+
+.form-input {
+  border-width: 0px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.submit-form{
+  width:90px;
+  height: 40px;
+  border-width: 0px;
+  padding: 5px;
+  margin: 2px;
+}

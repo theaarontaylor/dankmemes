@@ -1,0 +1,70 @@
+/*
+Error: File to import not found or unreadable: node_modules/normalize.css/normalize.
+       Load path: /home/itay/coding-academy/learningGIT/dankmemes/scss
+        on line 1 of scss/_vendor.scss
+        from line 1 of scss/style.scss
+
+1: @import 'vendor';
+2: @import 'functions';
+3: @import 'helpers';
+4: @import 'fonts';
+5: @import 'vars';
+6: @import 'layout';
+
+Backtrace:
+scss/_vendor.scss:1
+scss/style.scss:1
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:37:in `css_import?'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/home/itay/.gem/ruby/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: node_modules/normalize.css/normalize.\A        Load path: /home/itay/coding-academy/learningGIT/dankmemes/scss\A         on line 1 of scss/_vendor.scss\A         from line 1 of scss/style.scss\A \A 1: @import 'vendor';\A 2: @import 'functions';\A 3: @import 'helpers';\A 4: @import 'fonts';\A 5: @import 'vars';\A 6: @import 'layout';"; }

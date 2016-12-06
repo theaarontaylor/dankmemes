@@ -1,0 +1,15 @@
+$container-width: 1063px;
+$mobile-breakpoint: 642px;
+
+:root {
+  /* Layout */
+  --container-width: $container-width;
+  --inner-container-width: 900px;
+  /* Fonts */
+  --primary-font: Lato;
+  --secondary-font: Helvetica;
+  /* Colors */
+  --dark-grey-color: #323232;
+  --green-color: #2eb398;
+}
+
