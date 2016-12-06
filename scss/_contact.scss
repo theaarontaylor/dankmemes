@@ -1,0 +1,36 @@
+// /*Style for "form" 
+.contact-section {
+    color: white;
+    background-color: #323232;
+}
+
+ ::-webkit-input-placeholder {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 10px;
+    color: #ddd;
+}
+
+.h4-class {
+    color: #999;
+    font-size: 15px;
+}
+
+.form-input {
+    color: #eee;
+    background-color: grey
+}
+
+textarea,
+.textarea-form {
+    font-size: 13px;
+    background-color: grey;
+    color: #eee
+}
+
+.submit-form {
+    background-color: #2eb398;
+}
+
+ :hover.submit-form {
+    background-color: mediumspringgreen;
+}
