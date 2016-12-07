@@ -67,7 +67,39 @@ textarea,
 
 // imageGallery
 
-.images-row{
+.gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 75px;;
+    width: 100%;
+}
+
+.images-container{
   display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
   flex-wrap: wrap;
+}
+
+.search-container{
+  display: flex;
+  justify-content: space-around
+  
+}
+
+.search-bar-container{
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+
+}
+
+button{
+  width:70px;
+}
+
+
+.cloud-tag{
+  width:50%;
+  height: 400px;
 }

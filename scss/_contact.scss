@@ -5,9 +5,9 @@
     background-color: #323232;
 }
 
- ::-webkit-input-placeholder {
+.form-input::-webkit-input-placeholder {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     padding-left: 10px;
     color: #ddd;
 }
@@ -24,7 +24,7 @@
 
 textarea,
 .textarea-form {
-    font-size: 13px;
+    font-size: 15px;
     background-color: grey;
     color: #eee
 }
