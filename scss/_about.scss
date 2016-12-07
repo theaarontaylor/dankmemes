@@ -13,10 +13,16 @@ padding: 20px;
 .dev-name {
     font-size: 1.5em;
     color: #fff;
+    text-align: center;
+}
+
+.dev-details p {
+  text-align: center;
 }
 
 .dev-blurb {
     color: #fff;
+    text-align: justify;
 }
 
 .hexagon {

@@ -127,7 +127,7 @@ function renderImages(_images) {
         // debugger;
         var id = _images[i][id];
         strHTML += '<div id="' + id + '" class="hexagon"' +
-            'style="background-image: url(' + _images[i].url + ')">'
+            'style="background-image: url(' + _images[i].url + '); background-size: 100%;">'
 
         +
         '<div class="face1"></div><div class="face2"></div></div>'
@@ -164,9 +164,7 @@ function filterImages(_keyWordsToSearch) {
 }
 
 // adding words from the cloud tag to the search bar
-function addToSearchBar(_tag){
-    debugger
-    
+function addToSearchBar(_tag){    
     var searchBar = document.querySelector('.search-bar-input');
     var searchTerms = searchBar.value;
     var tag = _tag.innerHTML;

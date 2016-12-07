@@ -1,25 +1,58 @@
 // Style for "gallery"
 .gallery {
-    background-color: blue;
+    background-color: #fff;
+    font-family: var(--primary-font);    
 }
 
-.search-bar-container{
+.search-bar-container {
     // font-size: 13px;
+    height: 300px
+}
+
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    max-height: 400px;
 }
 
 .search-bar-input::-webkit-input-placeholder {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     padding-left: 10px;
-   color: #666;
+    color: #666;
+    font-size: 1.2em;
 }
+
 .search-bar-input{
-    width: 300px;
+    width: 100%;
     color: #555;
+    background-color: var(--green-color);
+    border: none;
+    height: 2em;
+    color: #fff;
+    font-size: 2em;    
+    padding-left: 10px;    
+}
+
+.search-label {
+    font-size: 2em;
+}
+
+.search-button {
+    background-color: #fff;
+    border: 2px solid var(--green-color);
+    margin: 10px auto;
+    font-size: 2em;
+    width: 150px;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--green-color);
+        color: #fff;
+    }
 }
 
 .cloud-tag{
-    background-color: #bbb;
+    background-color: #fff;
 }
 
 
@@ -32,4 +65,9 @@
 
 li{
     padding:5px;
+}
+
+.list-tags li:hover {
+    cursor: pointer;
+    color: var(--green-color);
 }

@@ -17,29 +17,29 @@
         <div class="nav-main">
             <div class="nav-inner">
                 <ul class="nav-list">
-                    <li class="nav-items">Memes</li>
-                    <li class="nav-items">Item 2</li>
+                    <li class="nav-items"> <a href="#gallery-section">Memes</a></li>
+                    <li class="nav-items"><a href="">Something</a></li></li>
                     <li class="nav-items">Triangle</li>
-                    <li class="nav-items">About</li>
-                    <li class="nav-items"><a href="textEditor.html">Contact Us</a></li>
+                    <li class="nav-items"><a href="#about-section">About</a></li>
+                    <li class="nav-items"><a href="#contact-section">Contact Us</a></li>
                 </ul>
             </div>
             <div class="triangle"></div>
         </div>
     </nav>
-    <section class="gallery">
+    <section class="gallery" id="gallery-section">
         <div class="search-container">
             <div class="search-bar-container">
-                <label for="">Enter term to search for your dank meme!</label>
-                <input class="search-bar-input" type="text" placeholder="Example: happy,animal">
-                <button type="button" onclick="searchKeyWords()" value="Search">Search</button>
+                <label class="search-label" for="search-input">Search for a dank meme here!</label>
+                <input name="search-input" class="search-bar-input" type="text" placeholder="Example: happy,animal">
+                <button type="button" class="search-button" onclick="searchKeyWords()" value="Search">Search</button>
             </div>
             <div class="cloud-tag"></div>
         </div>
         <div class="images-container">
         </div>
     </section>
-    <section>
+    <section id="about-section">
         <div class="about">
             <div class="about-dev-1">
                 <div class="dev-pic">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </section>
-    <section class="contact-section">
+    <section class="contact-section" id="contact-section">
         <div class="content-form-container">
             <h1>Get in touch</h1>
             <h4 class="h4-class">In order to get in touch use the form below</h4>
@@ -84,7 +84,7 @@
                     <input class="form-input" type="text" placeholder="Name(Required)" />
                     <input class="form-input" type="email" placeholder="Email(Required)" />
                     <input class="form-input" type="text" placeholder="Subject" />
-                    <textarea class="textarea-form" type="" placeholder="Write your message here"></textarea>
+                    <textarea class="textarea-form form-input" type="" placeholder="Write your message here"></textarea>
                     <input class="submit-form" type="button" value="Send">
                 </form>
                 <div class="text-form">

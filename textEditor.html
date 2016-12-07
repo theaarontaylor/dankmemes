@@ -10,8 +10,8 @@
     <div class="editors">
         <div class="editor">
                 <input type="text" name=""  id="topInput"> <br>        
-                <input type="color" value="#ffffff"  class="topColorChoose" oninput="changeColor(this)">
-                <button class="increaseButton" onclick="increaseTopFont()">Font +</button> 
+                <input type="color" value="#ffffff"  class="topColorChoose" oninput="changeColor(top)">
+                <button class="increaseButton" onclick="increaseTopFont(top)">Font +</button> 
                 <button class="decreaseButton" onclick="decreaseTopFont()">Font -</button> 
                 <button onclick="justifyLeft()">Left</button>
                 <button onclick="justifyCenter()">Center</button>
@@ -22,7 +22,7 @@
         </div>
         <div class="editor">
                 <input type="text" name=""  id="bottomInput"> <br>        
-                <input type="color" name="#fff"  class="bottomColorChoose" oninput="changeColor(this)">
+                <input type="color" name="#fff"  class="bottomColorChoose" oninput="changeColor(bottom)">
                 <button class="increaseButton">Font +</button> 
                 <button class="decreaseButton">Font -</button> 
                 <button onclick="justifyLeft()">Left</button>
