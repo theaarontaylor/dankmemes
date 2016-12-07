@@ -1,0 +1,27 @@
+.justify-left {
+    text-align: left;
+}
+
+.justify-center {
+    text-align: center;
+}
+
+.justify-right {
+    text-align: right;
+}
+
+.text-shadow {
+    text-shadow: 1px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.editor {
+    margin: auto;
+    width: 600px;
+    text-align: center;
+}
+
+.result {
+    width: 400px;
+    margin: auto;
+    text-transform: uppercase;
+}
