@@ -1,6 +1,24 @@
 // Style for "gallery"
 .gallery {
-    width: 1020px;
+    display: flex;
+    padding: 100px;
+    width: 100%;
     height: 1732px;
     background-color: blue;
+}
+
+.red-box{
+    width: 100px;
+    height: 175px;
+    background-color: red;
+}
+
+.images-container{
+    width: 100%;
+}
+
+.images-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
