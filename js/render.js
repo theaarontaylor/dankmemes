@@ -1,34 +1,67 @@
 'use strict';
 
-// this  is a render
-// render to index.html
+/*
+    - add a search bar:
+      - search bar is input
+      - after each keyword ',' will symbole the next keyword
+ */
 
 var gImages = [{
     id: 1,
-    url: 'url',
+    url: 'img/1.jpg',
     keywords: {
         animal: 1,
         happy: 1
     }
 }, {
     id: 2,
-    url: 'url',
+    url: 'img/2.jpg',
     keywords: {
         animal: 1,
         happy: 1
     }
 }, {
     id: 3,
-    url: 'url',
+    url: 'img/3.jpg',
     keywords: {
         animal: 1,
         happy: 1,
         sad:1
     }
-}]
+},{
+    id: 1,
+    url: 'img/1.jpg',
+    keywords: {
+        animal: 1,
+        happy: 1
+    }
+}, {
+    id: 2,
+    url: 'img/2.jpg',
+    keywords: {
+        animal: 1,
+        happy: 1
+    }
+}, {
+    id: 3,
+    url: 'img/3.jpg',
+    keywords: {
+        animal: 1,
+        happy: 1,
+        sad:1
+    }
+}
+]
+
+/*OPTIONAL:
+   when opening the webpage: 7 or 8 hexagons appear, each is from a 
+   different catagory, how many different catagories? 21
+   how many different images? 49 how can i actully take 
+   a different image from each catagory
+   array of different catagories.
+ */
 
 
-//first there will be a table inside the gallery
 
 // render will gover and arr of images
 function renderImageRow(_imageRow) {
@@ -36,40 +69,30 @@ function renderImageRow(_imageRow) {
     var tbody = document.querySelector('.images-container');
     var strHTML = '<div class="images-row">';
     for (var i = 0; i < _imageRow.length; i++) {
-        // * add id 
         // debugger;
         var id = _imageRow[i][id];
-        // * change div to img
-        strHTML += '<div id="' + id + '" class="red-box"></div>'
-            // * might have to make a function to make hexagon and than
-            //   return the result here to append.
+        strHTML += '<div id="' + id + '" class="hexagon"'+ 
+        'style="background-image: url('+_imageRow[i].url+')">'
+    
+        +'<div class="face1"></div><div class="face2"></div></div>'
     }
     strHTML += '</div>';
     tbody.innerHTML = strHTML;
 }
 renderImageRow(gImages);
 
-//-------------------------
-// * make a function to render hexagon
-// * should the function also add image?
-// * i think so => and render will just take them all togther
-
 
 //--------------------------
-//* function to search, filter.
-// recives an arr of keywords
-// will return an arr of the filtered images
-
-
+/* function to search, filter.
+ recives an arr of keywords
+ will return an arr of the filtered images*/
 function filterImages(_keyWordsToSearch) {
     // debugger
     var matchedImages = [];
     var curImage;
-    //first loop
     for (var i = 0; i < gImages.length; i++) {
         curImage = gImages[i];
         
-        // second loop
         for (var j = 0; j < _keyWordsToSearch.length; j++) {
             if (!gImages[i].keywords[_keyWordsToSearch[j]]) {
                 curImage = null;
@@ -83,12 +106,10 @@ function filterImages(_keyWordsToSearch) {
         console.log('out the second loop')
     }
     return matchedImages;
-    // will go to another function that will break the matchedImages
-    // to appropriate sizes. 5 images => 1 , 2, 1
-    // 4 => 1 , 2, 1
-    // 3 => 3
-    // 2 => 2
 }
 
 
 filterImages(['happy','sad']);
+
+
+
