@@ -1,58 +1,68 @@
 'use strict';
 
-var color;
+var topColor;
+var topFont = 50;
+var topInput = document.querySelector('#topInput');
 
 function addText() {
     var text = document.querySelector('#topInput').value;
-    document.querySelector('#result').innerHTML = "" + text;
+    // document.querySelector('#result').innerHTML = "" + text;
 };
 
-function changeColor() {
-    color = document.querySelector('.colorChoose').value;
-    return color;
-    // var text = document.querySelector('#result').style.color = color;
+
+function increaseTopFont() {
+    topFont += 2;
 }
 
-$(document).ready(function () {
-    $('.increaseButton').click(function () {
-        $('#result').css("font-size", function () {
-            return parseInt($(this).css('font-size')) + 1 + 'px';
-        });
-    });
-});
+function decreaseTopFont() {
+    topFont -= 2;
+}
 
-$(document).ready(function () {
-    $('.decreaseButton').click(function () {
-        $('#result').css("font-size", function () {
-            return parseInt($(this).css('font-size')) - 1 + 'px';
-        });
-    });
-});
+function changeColor() {
+    topColor = document.querySelector('.topColorChoose').value;
+    topInput.style.color = topColor;
+    drawOnCanvas(topColor);
+}
 
 function justifyLeft() {
-    var result = document.querySelector('#result');
-    result.classList.add('justify-left');
+    topInput.classList.add('justify-left');
 }
 
 function justifyRight() {
-    var result = document.querySelector('#result');
-    result.classList.add('justify-right');
+    topInput.classList.add('justify-right');
 }
 
 function justifyCenter() {
-    var result = document.querySelector('#result');
-    result.classList.add('justify-center');
+    topInput.classList.add('justify-center');
 }
 
 function toggleTextShadow() {
-    var result = document.querySelector('#result');    
-    result.classList.toggle('text-shadow');
+    topInput.classList.toggle('text-shadow');
 }
 
 function clearText() {
-    var result = document.querySelector('#result');
-    result.innerHTML = '';
+    topInput.innerHTML = '';
 }
+
+function wrapText(ctx, topText, x, y, maxWidth, lineHeight) {
+        var words = topText.split(' ');
+        var line = '';
+
+        for(var n = 0; n < words.length; n++) {
+          var testLine = line + words[n] + ' ';
+          var metrics = ctx.measureText(testLine);
+          var testWidth = metrics.width;
+          if (testWidth > maxWidth && n > 0) {
+            ctx.fillText(line.toUpperCase(), x, y);
+            line = words[n] + ' ';
+            y += lineHeight;
+          }
+          else {
+            line = testLine;
+          }
+        }
+        ctx.fillText(line.toUpperCase(), x, y);
+      }
 
     
 var canvas;
@@ -64,24 +74,39 @@ window.onload = function init() {
             drawOnCanvas();
         }
 
-function drawOnCanvas() {
+function drawOnCanvas(color) {
     var img = new Image();
     img.src = "assets/img/meme.png";
-    img.onload = function () {
-    ctx.fillRect(img, 0, canvas.width, canvas.height);
-    document.getElementById('topInput').addEventListener('keyup', function () {
-        ctx.drawImage(img, 0, 0, 568, 360);
-        ctx.save();
-        // ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var topText = document.getElementById('topInput').value;
-        ctx.font = '60px sans-serif';
-        ctx.fillStyle = color;
-        var text_title = topText;
-        ctx.fillText(topText, 15, canvas.height / 2 + 35);
-        ctx.restore();        
-    });
+    img.onload = function() {
+        ctx.fillRect(img, 0, canvas.width, canvas.height);
+        document.getElementById('topInput').addEventListener('keyup', function() {
+            ctx.drawImage(img, 0, 0, 568, 360);
+            ctx.save();
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // var result = document.querySelector('#result').value;
+            if (topInput.classList.contains('text-shadow')){
+                ctx.shadowColor = 'grey';
+                ctx.shadowOffsetX = 2; 
+                ctx.shadowOffsetY = 2; 
+                ctx.shadowBlur = 3;
+            }
+            var topText = document.getElementById('topInput').value;
+            topText.toUpperCase();
+            ctx.font = topFont + 'px Lato';
+            ctx.fillStyle = color;
+            var maxWidth = canvas.width;
+            var lineHeight = 55;
+            var x = (canvas.width - maxWidth) / 2;
+            var y = 60;
+            // ctx.fillText(topText, 15, canvas.height / 5);
+            wrapText(ctx,topText,x,y,maxWidth,lineHeight);
+            ctx.restore();
+        });
+    }
 }
-}
+
+
+
 
 /**
  * This is the function that will take care of image extracting and
@@ -92,3 +117,20 @@ function drawOnCanvas() {
 //     elLink.href = canvas.toDataURL();
 //     elLink.download = 'perfectMeme.jpg';
 // }
+
+
+// $(document).ready(function () {
+//     $('.increaseButton').click(function () {
+//         $('#topInput').css("font-size", function () {
+//             return parseInt($(this).css('font-size')) + 1 + 'px';
+//         });
+//     });
+// });
+
+// $(document).ready(function () {
+//     $('.decreaseButton').click(function () {
+//         $('#topInput').css("font-size", function () {
+//             return parseInt($(this).css('font-size')) - 1 + 'px';
+//         });
+//     });
+// });

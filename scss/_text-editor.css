@@ -24,4 +24,25 @@
     width: 400px;
     margin: auto;
     text-transform: uppercase;
+    float: right;
+}
+
+.editors {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.result-box {
+    width: 50%;
+    float: right;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
 }
