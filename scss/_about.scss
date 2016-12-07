@@ -3,6 +3,8 @@
 width: 100%;
 height: 541px;
 background-color: #2eb398;
+font-family: var(--primary-font);
+padding: 20px;
 }
 
 .about-dev-1, .about-dev-2 {
@@ -10,6 +12,7 @@ background-color: #2eb398;
     height: 200px;
     margin: 2em auto;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .dev-pic {
@@ -22,6 +25,15 @@ background-color: #2eb398;
 .dev-details {
     width: 580px;
     display: inline-block;
+}
+
+.dev-name {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.dev-blurb {
+    color: #fff;
 }
 
 .hexagon {
@@ -83,3 +95,4 @@ background-color: #2eb398;
   transform-origin: right top;
   transform: rotate(60deg) translate(110px, 0);
 }
+

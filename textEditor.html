@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="scss/_text-editor.css">
+    <title>Text Editor</title>
+</head>
+<body>
+    <div class="editor">
+            <input type="text" name=""  id="topInput" oninput="addText()"> <br>        
+            <input type="color" name="#ff000"  class="colorChoose" oninput="changeColor()">
+            <button class="increaseButton">Font +</button> 
+            <button class="decreaseButton">Font -</button> 
+            <button onclick="justifyLeft()">Left</button>
+            <button onclick="justifyCenter()">Center</button>
+            <button onclick="justifyRight()">Right</button>
+            <button onclick="toggleTextShadow()">Toggle Text Shadow</button>
+            <button onclick="clearText()">Clear Text</button>
+        
+    </div>
+
+    <div class="result-box">
+        <p id="result"></p>
+    </div>
+
+<canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
+<!--<input type="text" id="title" placeholder="Your Title" />-->
+</br>
+      
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    <script src="js/textEditor.js"></script>
+</body>
+</html>
