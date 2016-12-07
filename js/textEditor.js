@@ -1,7 +1,23 @@
 'use strict';
 
-var topColor;
-var topFont = 50;
+var lineHeight = 55;
+
+var topText = { color: '#ffffff',
+                positionX: 130,
+                positionY: 40,
+                textShadow: 'no',
+                textAlign: 'left',
+                fontSize: 40,
+            };
+
+var bottomText = {  color: '#ff0000',
+                    positionX: 0,
+                    positionY: 0,
+                    textShadow: 'no',
+                    textAlign: 'left',
+                    fontSize: 40,
+                    };
+
 var topInput = document.querySelector('#topInput');
 
 function addText() {
@@ -11,96 +27,99 @@ function addText() {
 
 
 function increaseTopFont() {
-    topFont += 2;
+    topText.fontSize += 2;
 }
 
 function decreaseTopFont() {
-    topFont -= 2;
+    topText.fontSize -= 2;
 }
 
 function changeColor() {
-    topColor = document.querySelector('.topColorChoose').value;
-    topInput.style.color = topColor;
-    drawOnCanvas(topColor);
+    topText.color = document.querySelector('.topColorChoose').value;
+    bottomText.color = document.querySelector('.bottomColorChoose').value;
+    topInput.style.color = topText.color;
+    // drawOnCanvas(topColor);
 }
 
-function justifyLeft() {
-    topInput.classList.add('justify-left');
-}
+// function justifyLeft() {
+//     topInput.classList.add('justify-left');
+// }
 
-function justifyRight() {
-    topInput.classList.add('justify-right');
-}
+// function justifyRight() {
+//     topInput.classList.add('justify-right');
+// }
 
-function justifyCenter() {
-    topInput.classList.add('justify-center');
-}
+// function justifyCenter() {
+//     topInput.classList.add('justify-center');
+// }
 
 function toggleTextShadow() {
     topInput.classList.toggle('text-shadow');
 }
 
-function clearText() {
+function clearTopText() {
     topInput.innerHTML = '';
 }
 
-function wrapText(ctx, topText, x, y, maxWidth, lineHeight) {
-        var words = topText.split(' ');
-        var line = '';
+function clearBottomText() {
+    topInput.innerHTML = '';
+}
 
-        for(var n = 0; n < words.length; n++) {
-          var testLine = line + words[n] + ' ';
-          var metrics = ctx.measureText(testLine);
-          var testWidth = metrics.width;
-          if (testWidth > maxWidth && n > 0) {
+function wrapAndPrintText(ctx, topText, x, y, maxWidth, lineHeight) {
+    var words = topText.split(' ');
+    var line = '';
+
+    for (var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + ' ';
+        var metrics = ctx.measureText(testLine);
+        var testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
             ctx.fillText(line.toUpperCase(), x, y);
             line = words[n] + ' ';
             y += lineHeight;
-          }
-          else {
-            line = testLine;
-          }
         }
-        ctx.fillText(line.toUpperCase(), x, y);
-      }
+        else {
+            line = testLine;
+        }
+    }
+    ctx.fillText(line.toUpperCase(), x, y);
+}
 
     
 var canvas;
 var ctx;
 
 window.onload = function init() {
-            canvas = document.getElementById('canvas');
-            ctx = canvas.getContext('2d');
-            drawOnCanvas();
-        }
+    canvas = document.getElementById('canvas');
+    ctx = canvas.getContext('2d');
+    drawOnCanvas();
+}
 
-function drawOnCanvas(color) {
+function drawOnCanvas() {
     var img = new Image();
     img.src = "assets/img/meme.png";
     img.onload = function() {
         ctx.fillRect(img, 0, canvas.width, canvas.height);
-        document.getElementById('topInput').addEventListener('keyup', function() {
-            ctx.drawImage(img, 0, 0, 568, 360);
-            ctx.save();
-            // ctx.clearRect(0, 0, canvas.width, canvas.height);
-            // var result = document.querySelector('#result').value;
+        ctx.drawImage(img, 0, 0, 568, 360);                
+        document.getElementById('topInput').addEventListener('input', function() {
+        ctx.drawImage(img, 0, 0, 568, 360);        
+        ctx.save();
             if (topInput.classList.contains('text-shadow')){
                 ctx.shadowColor = 'grey';
                 ctx.shadowOffsetX = 2; 
                 ctx.shadowOffsetY = 2; 
                 ctx.shadowBlur = 3;
             }
-            var topText = document.getElementById('topInput').value;
-            topText.toUpperCase();
-            ctx.font = topFont + 'px Lato';
-            ctx.fillStyle = color;
-            var maxWidth = canvas.width;
-            var lineHeight = 55;
-            var x = (canvas.width - maxWidth) / 2;
-            var y = 60;
+            var topInputEl = document.getElementById('topInput').value;
+            topInputEl.toUpperCase();
+            ctx.font = topText.fontSize + 'px Lato';
+            ctx.fillStyle = topText.color;
+            // ctx.textAlign = 'end';
+            var maxWidth = canvas.width - (canvas.width * 0.3);
+            // var x = (canvas.width - maxWidth) / 2;
+            // var y = 60;
             // ctx.fillText(topText, 15, canvas.height / 5);
-            wrapText(ctx,topText,x,y,maxWidth,lineHeight);
-            ctx.restore();
+            wrapAndPrintText(ctx,topInputEl,topText.positionX, topText.positionY,maxWidth,lineHeight);
         });
     }
 }
