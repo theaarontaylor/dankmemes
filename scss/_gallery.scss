@@ -21,3 +21,15 @@
 .cloud-tag{
     background-color: #bbb;
 }
+
+
+
+.list-tags{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+li{
+    padding:5px;
+}

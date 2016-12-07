@@ -47,16 +47,65 @@ var gImages = [{
     id: 6,
     url: 'img/6.jpg',
     keywords: {
+        sad: 1,
+        fail: 1
+    }
+}, {
+    id: 7,
+    url: 'img/7.jpg',
+    keywords: {
         happy: 1,
         sad: 1
+    }
+}, {
+    id: 8,
+    url: 'img/8.jpg',
+    keywords: {
+        happy: 1,
+        crazy: 1
+    }
+}, {
+    id: 9,
+    url: 'img/9.jpg',
+    keywords: {
+        sarcastic: 1,
+        success: 1
+    }
+}, {
+    id: 10,
+    url: 'img/10.jpg',
+    keywords: {
+        success: 1,
+        sad: 1
+    }
+}, {
+    id: 11,
+    url: 'img/11.jpg',
+    keywords: {
+        happy: 1,
+        success: 1
+    }
+}, {
+    id: 12,
+    url: 'img/12.jpg',
+    keywords: {
+        crazy: 1,
+        animal: 1
+    }
+}, {
+    id: 13,
+    url: 'img/13.jpg',
+    keywords: {
+        sarcastic: 1
     }
 }]
 
 
 
 function main() {
-    debugger
+    // debugger
     countCatagoryOccur();
+    renderCloudTag();
 }
 
 main();
@@ -114,17 +163,25 @@ function filterImages(_keyWordsToSearch) {
     return matchedImages;
 }
 
+// adding words from the cloud tag to the search bar
+function addToSearchBar(_tag){
+    debugger
+    
+    var searchBar = document.querySelector('.search-bar-input');
+    var searchTerms = searchBar.value;
+    var tag = _tag.innerHTML;
+    // _tag.
+    searchTerms += ',' + tag;
+    searchBar.value = searchTerms;
 
-//filterImages(['happy','sad']);
-
-
+}
 
 function searchKeyWords() {
     // debugger
     gImageContainer.innerHTML = '';
     var keywordString = document.querySelector('.search-bar-input').value;
     var keywords = keywordString.split(",");
-
+    keywords = keywords.filter(v => v!=='');
     renderImages(filterImages(keywords));
 }
 
@@ -145,7 +202,6 @@ function countCatagoryOccur() {
     for (var d = 0; d < catagoryKeys.length; d++) {
         catagoryKeys[d].push(catagoryCount[catagoryKeys[d]]);
     }
-    debugger
     gCatagorys = catagoryKeys.sort(function (a, b) {
         return a[1] - b[1];
     });
@@ -158,7 +214,6 @@ function objToArr(_obj) {
         keys.push([key])
             // keys[keys.length - 1] = key;
     }
-    debugger
     return keys;
 }
 
@@ -175,14 +230,45 @@ function objToArr(_obj) {
 // setting size of keywords proportionaly to occurences.
 
 function renderCloudTag() {
+    // debugger
     // this goes in a for loop
+    var cloudTag = document.querySelector('.cloud-tag');
+    var textScale = d3.scaleLinear()
+        .domain([gCatagorys[0][1], gCatagorys[gCatagorys.length - 1][1]])
+        .range([10, 50]);
+    var opacity = d3.scaleLinear()
+        .domain([gCatagorys[0][1], gCatagorys[gCatagorys.length - 1][1]])
+        .range([0.5, 1]);
     var strHTML = '<ul class="list-tags">';
-
-    for(var i = 0; i < gCatagorys.length; i++){
-        // here i render each p, and add them to strHTML
-        // strHTML will be push to the cloud-tag div
+    var shuffled = shuffle(gCatagorys);
+    for (var i = 0; i < gCatagorys.length; i++) {
+        strHTML += '<li style="font-size:' 
+                   + parseInt(textScale(shuffled[i][1])) + 'px;"'
+                   + ' onclick="addToSearchBar(this)">' 
+                   + shuffled[i][0] + '</li>'
+            // here i render each p, and add them to strHTML
+            // strHTML will be push to the cloud-tag div
     }
-    strHTML +='</ul>'
-    var textScale = d3.scaleLinear().domain([1, 6]).range([10, 50]);
-    var d = textScale(gCatagorys[0][1])
+    strHTML += '</ul>'
+    cloudTag.innerHTML = strHTML;
+}
+
+// shuffle array
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
