@@ -37,7 +37,15 @@
 }
 
 .text-form {
+  display: flex;
+  flex-direction: column;
   width: 30%;
+}
+
+i{
+  margin-top:15px;
+  margin-right: 10px;
+  color: #238975;
 }
 
 textarea,
@@ -74,6 +82,7 @@ textarea,
   justify-content: space-around;
   margin-top: 30px;
   flex-wrap: wrap;
+  margin: 75px auto;
 }
 
 .search-container {
