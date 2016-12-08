@@ -171,7 +171,7 @@ function addToSearchBar(_tag){
     // _tag.
     searchTerms += ',' + tag;
     searchBar.value = searchTerms;
-
+    searchKeyWords();
 }
 
 function searchKeyWords() {
@@ -181,6 +181,12 @@ function searchKeyWords() {
     var keywords = keywordString.split(",");
     keywords = keywords.filter(v => v!=='');
     renderImages(filterImages(keywords));
+}
+
+function clearSearch(){
+     var searchBar = document.querySelector('.search-bar-input');
+     searchBar.value = '';
+     searchKeyWords();
 }
 
 //---------------------
@@ -297,4 +303,15 @@ $(document).ready(function(){
       });
     } // End if
   });
+
+  $('#submitContact').on('click',function(){
+      debugger;
+      console.log('ddd');
+  })
 });
+
+function contactForm(){ 
+    debugger
+    
+}
+
