@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Meme Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="dist/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap-social.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="shortcut icon">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,11 +20,10 @@
             <div class="nav-inner">
                 <ul class="nav-list">
                     <li class="nav-items"> <a href="#gallery-section">Memes</a></li>
-                    <li class="nav-items"><a href="">Something</a></li>
                     </li>
-                    <li class="nav-items ">
+                    <!--<li class="nav-items ">
                         <div class="square"></div>
-                    </li>
+                    </li>-->
                     <li class="nav-items"><a href="#about-section">About</a></li>
                     <li class="nav-items"><a href="#contact-section">Contact Us</a></li>
                 </ul>
@@ -49,33 +50,38 @@
         <div class="boxes hide">
             <div class="editors">
                 <div class="editor top-editor">
-                    <input type="text" name="" id="topInput"> <br>
+                    <input type="text" name="" class="text-editor-input" id="topInput" oninput="writeTextToObject()"> <br>
                     <input type="color" value="#ffffff" class="topColorChoose" oninput="changeColor(top)">
-                    <button class="editor-button increaseButton" onclick="increaseTopFont(top)">Font +</button>
-                    <button class="editor-button decreaseButton" onclick="decreaseTopFont()">Font -</button>
-                    <button class="editor-button" onclick="justifyLeft()">Left</button>
-                    <button class="editor-button" onclick="justifyCenter()">Center</button>
-                    <button class="editor-button" onclick="justifyRight()">Right</button>
+                    <button class="editor-button increaseButton" onclick="increaseTopFont(top)"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <button class="editor-button decreaseButton" onclick="decreaseTopFont()"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="justifyLeft()"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="justifyCenter()"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="justifyRight()"><i class="fa fa-align-right" aria-hidden="true"></i></button>
                     <button class="editor-button" onclick="toggleTextShadow()">Toggle Text Shadow</button>
-                    <button class="editor-button" onclick="clearTopText()">Clear Text</button>
+                    <button class="editor-button" onclick="clearTopText()"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </div>
-                <div class="editor bottom-editor">
-                    <input type="text" name="" id="bottomInput"> <br>
-                    <input type="color" value="#ffffff" name="#fff" class="bottomColorChoose" oninput="changeColor(bottom)">
-                    <button class="editor-button increaseButton">Font +</button>
-                    <button class="editor-button decreaseButton">Font -</button>
-                    <button class="editor-button" onclick="justifyLeft()">Left</button>
-                    <button class="editor-button" onclick="justifyCenter()">Center</button>
-                    <button class="editor-button" onclick="justifyRight()">Right</button>
-                    <button class="editor-button" onclick="toggleTextShadow()">Toggle Text Shadow</button>
-                    <button class="editor-button" onclick="clearBottomText()">Clear Text</button>
-                </div>
-            </div>
-
-            <div class="result-box">
+                <div class="result-box">
                 <!--<p id="result"></p>-->
-                <canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
+                <canvas width="400" height="300" id="canvas">Sorry, no canvas available</canvas>
             </div>
+                <div class="editor bottom-editor">
+                    <input type="text" name="" class="text-editor-input" id="bottomInput" oninput="writeTextToObject()"> <br>
+                    <input type="color" value="#ffffff" name="#fff" class="bottomColorChoose" oninput="changeColor(bottom)">
+                    <button class="editor-button increaseButton"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <button class="editor-button decreaseButton"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="justifyLeft()"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="justifyCenter()"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="justifyRight()"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+                    <button class="editor-button" onclick="toggleTextShadow()">Toggle Text Shadow</button>
+                    <button class="editor-button" onclick="clearBottomText()"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    
+                </div>
+            </div>
+                    <span class="bottom-font-display"></span>                    
+            
+             <a id="download" class="download-meme-button" onclick="downloadImg(this)">
+          Download this dank meme
+      </a>
         </div>
     </section>
     <section id="about-section">
@@ -139,6 +145,7 @@
     <script src="js/d3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/textEditor.js"></script>
     <script src="js/render.js"></script>

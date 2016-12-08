@@ -18,6 +18,14 @@
      text-transform: uppercase;
  }
 
+ .nav-items a{
+     color: #fff;
+     &:hover {
+         text-decoration: none;
+         color: var(--green-color);
+     }
+ }
+
 .nav-list {
     display: flex;
 }

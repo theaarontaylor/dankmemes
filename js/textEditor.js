@@ -9,7 +9,8 @@ var gImg;
 
 
 
-var topText = { color: '#ffffff',
+var topText = { content: '',
+                color: '#ffffff',
                 positionX: 30,
                 positionY: 40,
                 textShadow: 'no',
@@ -17,7 +18,8 @@ var topText = { color: '#ffffff',
                 fontSize: 40,
             };
 
-var bottomText = {  color: '#ffffff',
+var bottomText = {  content: '',
+                    color: '#ffffff',
                     positionX: 30,
                     positionY: 240,
                     textShadow: 'no',
@@ -50,6 +52,7 @@ function decreaseTopFont() {
 
 function increaseBottomFont() {
     bottomText.fontSize += 2;
+    var counter = document.querySelector('.bottom-font-display');
 }
 
 function decreaseBottomFont() {
@@ -85,6 +88,13 @@ function clearBottomText() {
     topInput.innerHTML = '';
 }
 
+function writeTextToObject() {
+    topText.content = document.getElementById('topInput').value;
+    bottomText.content = document.getElementById('bottomInput').value;
+    drawImageOnCanvas();
+    // writeOnTopCanvas(gImg, ctx);    
+}
+
 function wrapAndPrintText(ctx, input, x, y, maxWidth, lineHeight) {
     var words = input.split(' ');
     var line = '';
@@ -109,10 +119,10 @@ function wrapAndPrintText(ctx, input, x, y, maxWidth, lineHeight) {
 function init() {
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
-    prepareCanvas();
+    drawImageOnCanvas();
 }
 
-function prepareCanvas() {
+function drawImageOnCanvas() {
     var picture = new Image();
     picture.src = gImg;
     // picture.onload = function() {
@@ -124,49 +134,31 @@ function prepareCanvas() {
 }
 
 function writeOnTopCanvas(gImg, ctx) {
-    document.getElementById('topInput').addEventListener('input', function() {
-        ctx.drawImage(gImg, 0, 0, 568, 360);        
-        ctx.save();
             if (topInput.classList.contains('text-shadow')){
-                ctx.shadowColor = 'grey';
-                ctx.shadowOffsetX = 2; 
-                ctx.shadowOffsetY = 2; 
-                ctx.shadowBlur = 3;
+                ctx.shadowColor = 'black';
+                ctx.shadowOffsetX = 4; 
+                ctx.shadowOffsetY = 4; 
+                ctx.shadowBlur = 2;
             }
-            var topInputEl = document.getElementById('topInput').value;
-            topInputEl.toUpperCase();
+            topText.content.toUpperCase();
             ctx.font = topText.fontSize + 'px Lato';
             ctx.fillStyle = topText.color;
             var maxWidth = canvas.width - (canvas.width * 0.3);                    
-            // ctx.textAlign = 'end';
-            // var x = (canvas.width - maxWidth) / 2;
-            // var y = 60;
-            // ctx.fillText(topText, 15, canvas.height / 5);
-            wrapAndPrintText(ctx,topInputEl,topText.positionX, topText.positionY,maxWidth,lineHeight);
-        });
+            wrapAndPrintText(ctx,topText.content,topText.positionX, topText.positionY,maxWidth,lineHeight);
 }
 
 function writeOnBottomCanvas(gImg, ctx) {
-    document.getElementById('bottomInput').addEventListener('input', function() {
-        ctx.drawImage(gImg, 0, 0, 568, 360);        
-        ctx.save();
             if (bottomInput.classList.contains('text-shadow')){
-                ctx.shadowColor = 'grey';
-                ctx.shadowOffsetX = 2; 
-                ctx.shadowOffsetY = 2; 
-                ctx.shadowBlur = 3;
+                ctx.shadowColor = 'black';
+                ctx.shadowOffsetX = 4; 
+                ctx.shadowOffsetY = 4; 
+                ctx.shadowBlur = 2;
             }
-            var bottomInputEl = document.getElementById('bottomInput').value;
-            bottomInputEl.toUpperCase();
+            bottomText.content.toUpperCase();
             ctx.font = bottomText.fontSize + 'px Lato';
             ctx.fillStyle = bottomText.color;
             var maxWidth = canvas.width - (canvas.width * 0.3);                    
-            // ctx.textAlign = 'end';
-            // var x = (canvas.width - maxWidth) / 2;
-            // var y = 60;
-            // ctx.fillText(topText, 15, canvas.height / 5);
-            wrapAndPrintText(ctx,bottomInputEl,bottomText.positionX, bottomText.positionY,maxWidth,lineHeight);
-        });
+            wrapAndPrintText(ctx,bottomText.content,bottomText.positionX, bottomText.positionY,maxWidth,lineHeight);
 }
 
 
@@ -176,10 +168,10 @@ function writeOnBottomCanvas(gImg, ctx) {
  * setting proper filename for the download.
  * IMPORTANT: Call it from within a onclick event.
  */
-// function downloadImg(elLink) {
-//     elLink.href = canvas.toDataURL();
-//     elLink.download = 'perfectMeme.jpg';
-// }
+function downloadImg(elLink) {
+    elLink.href = canvas.toDataURL();
+    elLink.download = 'perfectMeme.jpg';
+}
 
 
 // $(document).ready(function () {
