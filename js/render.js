@@ -125,7 +125,7 @@ function renderImages(_images) {
     var strHTML = '';
     for (var i = 0; i < _images.length; i++) {
         // debugger;
-        var id = _images[i][id];
+        var id = 'img/' + _images[i].id + '.jpg';
         strHTML += '<div id="' + id + '" class="hexagon" onclick="sendPicToEditor(this)"' +
             'style="background-image: url(' + _images[i].url + '); background-size: 100%;">'
 

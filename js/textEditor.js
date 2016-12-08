@@ -5,7 +5,7 @@ var ctx;
 var lineHeight = 55;
 var topInput = document.querySelector('#topInput');
 var bottomInput = document.querySelector('#bottomInput');
-var img = new Image();
+var gImg;
 
 
 
@@ -30,6 +30,14 @@ var bottomText = {  color: '#ffffff',
 //     var text = document.querySelector('#topInput').value;
 //     // document.querySelector('#result').innerHTML = "" + text;
 // };
+
+function sendPicToEditor(_img) {
+    gImg = _img.getAttribute('id');
+    console.log(gImg);
+    init();
+    var editor = document.querySelector('.boxes');
+    editor.classList.toggle('hide');
+}
 
 
 function increaseTopFont() {
@@ -98,25 +106,26 @@ function wrapAndPrintText(ctx, input, x, y, maxWidth, lineHeight) {
 }
 
 
-window.onload = function init() {
+function init() {
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
     prepareCanvas();
 }
 
 function prepareCanvas() {
-    img.src = "assets/img/meme.png";
-    img.onload = function() {
-        ctx.fillRect(img, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, 568, 360);    
-        writeOnTopCanvas(img, ctx);  
-        writeOnBottomCanvas(img,ctx);          
-    }
+    var picture = new Image();
+    picture.src = gImg;
+    // picture.onload = function() {
+        ctx.fillRect(picture, 0, canvas.width, canvas.height);
+        ctx.drawImage(picture, 0, 0, 568, 360);    
+        writeOnTopCanvas(picture, ctx);  
+        writeOnBottomCanvas(picture,ctx);          
+    // }
 }
 
-function writeOnTopCanvas(img, ctx) {
+function writeOnTopCanvas(gImg, ctx) {
     document.getElementById('topInput').addEventListener('input', function() {
-        ctx.drawImage(img, 0, 0, 568, 360);        
+        ctx.drawImage(gImg, 0, 0, 568, 360);        
         ctx.save();
             if (topInput.classList.contains('text-shadow')){
                 ctx.shadowColor = 'grey';
@@ -137,9 +146,9 @@ function writeOnTopCanvas(img, ctx) {
         });
 }
 
-function writeOnBottomCanvas(img, ctx) {
+function writeOnBottomCanvas(gImg, ctx) {
     document.getElementById('bottomInput').addEventListener('input', function() {
-        ctx.drawImage(img, 0, 0, 568, 360);        
+        ctx.drawImage(gImg, 0, 0, 568, 360);        
         ctx.save();
             if (bottomInput.classList.contains('text-shadow')){
                 ctx.shadowColor = 'grey';

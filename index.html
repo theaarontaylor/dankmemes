@@ -42,6 +42,39 @@
         <div class="images-container">
         </div>
     </section>
+    <section class="meme-editor">
+        <div class="boxes hide">
+            <div class="editors">
+                <div class="editor top-editor">
+                    <input type="text" name="" id="topInput"> <br>
+                    <input type="color" value="#ffffff" class="topColorChoose" oninput="changeColor(top)">
+                    <button class="editor-button increaseButton" onclick="increaseTopFont(top)">Font +</button>
+                    <button class="editor-button decreaseButton" onclick="decreaseTopFont()">Font -</button>
+                    <button class="editor-button" onclick="justifyLeft()">Left</button>
+                    <button class="editor-button" onclick="justifyCenter()">Center</button>
+                    <button class="editor-button" onclick="justifyRight()">Right</button>
+                    <button class="editor-button" onclick="toggleTextShadow()">Toggle Text Shadow</button>
+                    <button class="editor-button" onclick="clearTopText()">Clear Text</button>
+                </div>
+                <div class="editor bottom-editor">
+                    <input type="text" name="" id="bottomInput"> <br>
+                    <input type="color" value="#ffffff" name="#fff" class="bottomColorChoose" oninput="changeColor(bottom)">
+                    <button class="editor-button increaseButton">Font +</button>
+                    <button class="editor-button decreaseButton">Font -</button>
+                    <button class="editor-button" onclick="justifyLeft()">Left</button>
+                    <button class="editor-button" onclick="justifyCenter()">Center</button>
+                    <button class="editor-button" onclick="justifyRight()">Right</button>
+                    <button class="editor-button" onclick="toggleTextShadow()">Toggle Text Shadow</button>
+                    <button class="editor-button" onclick="clearBottomText()">Clear Text</button>
+                </div>
+            </div>
+
+            <div class="result-box">
+                <!--<p id="result"></p>-->
+                <canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
+            </div>
+        </div>
+    </section>
     <section id="about-section">
         <div class="about">
             <div class="about-dev-1">
@@ -63,7 +96,7 @@
             <div class="about-dev-2">
                 <div class="dev-pic">
                     <div class="hexagon">
-                        PIC OF ITAY
+                        PIC OF AARON
                         <div class="face1"></div>
                         <div class="face2"></div>
                     </div>
@@ -104,6 +137,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script src="js/textEditor.js"></script>
     <script src="js/render.js"></script>
     <script src="https://use.fontawesome.com/4a8a2fb128.js"></script>
 </body>

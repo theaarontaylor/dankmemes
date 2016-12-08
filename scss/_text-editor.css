@@ -34,7 +34,10 @@
     height: 450px;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0;
+}
+
+.editor-button {
+    border: 2px solid green;
 }
 
 .result-box {
