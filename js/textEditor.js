@@ -51,9 +51,6 @@ function decreaseBottomFont() {
 function changeColor() {
     topText.color = document.querySelector('.topColorChoose').value;
     bottomText.color = document.querySelector('.bottomColorChoose').value;
-    // topInput.style.color = topText.color;
-    writeOnTopCanvas(img, ctx);
-    // drawOnCanvas(topColor);
 }
 
 // function justifyLeft() {
@@ -137,7 +134,6 @@ function writeOnTopCanvas(img, ctx) {
             // var y = 60;
             // ctx.fillText(topText, 15, canvas.height / 5);
             wrapAndPrintText(ctx,topInputEl,topText.positionX, topText.positionY,maxWidth,lineHeight);
-            console.log(ctx);
         });
 }
 
